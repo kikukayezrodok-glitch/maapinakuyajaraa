@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f0f7ff; /* pastel blue tint */
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Custom keyframes for float up background hearts */
+@keyframes heartFloat {
+  0% {
+    transform: translateY(110vh) translateX(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(var(--drift, 20px)) scale(1.2) rotate(var(--rotation, 20deg));
+    opacity: 0;
+  }
+}
+
+.bg-heart {
+  position: absolute;
+  bottom: -50px;
+  animation: heartFloat var(--duration, 15s) linear infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Animated soft background blobs */
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.2) rotate(120deg);
+  }
+  66% {
+    transform: translate(-30px, 40px) scale(0.85) rotate(240deg);
+  }
+}
+
+.animate-blob {
+  animation: blobFloat 18s infinite ease-in-out;
+}
+
+/* Twinkling background sparkles */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.3) rotate(180deg);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 4s infinite ease-in-out;
+}
+
+/* Shine effect for high-attention button */
+@keyframes shineSweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.btn-shine {
+  background-size: 200% auto;
+  animation: shineSweep 4s infinite linear;
+}
+

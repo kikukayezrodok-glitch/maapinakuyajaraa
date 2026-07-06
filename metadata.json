@@ -1,0 +1,6 @@
+{
+  "name": "Apology Card for Jara",
+  "description": "Kartu ucapan digital lucu dan romantis untuk meminta maaf ke Jara dengan animasi hati, tombol interaktif, dan peluk virtual.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
